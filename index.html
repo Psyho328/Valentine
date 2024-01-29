@@ -49,7 +49,8 @@
 <body>
   <main>
     <div class="ques">
-      <div class="tenor-gif-embed" data-postid="24055162" data-share-method="host" data-aspect-ratio="1" data-width="50%"><a href="https://tenor.com/view/tkthao219-bubududu-panda-gif-24055162">Tkthao219 Bubududu Sticker</a>from <a href="https://tenor.com/search/tkthao219-stickers">Tkthao219 Stickers</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+      <!-- Use the <img> element instead of the <div> element -->
+      <img src="https://media.tenor.com/images/0b6a9c5f7d4c9f7a3a9f8b0e3c0a7f4d/tenor.gif" alt="Tkthao219 Bubududu Sticker" width="50%">
       <h3>Hi! (name)</h3>
       <br>
       <h3>Will you go out with me?</h3>
@@ -112,6 +113,24 @@
   yesButton.addEventListener("mouseover", handleMouseover);
   noButton.addEventListener("mouseover", handleMouseover);
 
+  // Define a function to run when the webpage loads
+  function greetUser() {
+    // Display a message and an input box to the user
+    var name = window.prompt("Hello, please enter your name cutie ;))");
+    // Get the <h3> element that contains the name placeholder
+    var nameElement = document.querySelector(".ques h3:first-child");
+    // Check if the user entered a valid name
+    if (name && name.trim()) {
+      // Replace the name placeholder with the user's input
+      nameElement.textContent = "Hi! " + name;
+    } else {
+      // Use a default name if the user did not enter anything
+      nameElement.textContent = "Hi! (name)";
+    }
+  }
+
+  // Add the window.onload event listener to run the function
+  window.onload = greetUser;
   </script>
 </body>
 </html>
